@@ -1,0 +1,1 @@
+# typescript-model-class-vs-Interfaces
