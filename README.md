@@ -1,10 +1,10 @@
-# TypeScript Model Class vs Interfaces
+# TypeScript Interfaces vs Model Class
 
 Model Class | Interfaces
 --- | ---
 An interface is only used by TypeScript at `compile time`, and is then removed. Interfaces do not end up in our final JavaScript output. | `Runtime`
 
-
+## Interfaces
 #### Interface Example 01:
 ```javascript
 export interface IProduct {
@@ -42,8 +42,8 @@ const notADuck: Duck = {}
 // Property 'hasWings' is missing in type '{}'."``javascript
 ```
 
-
-#### Example of Model:
+## Model Class
+#### Model Class Example 01:
 ```javascript
 export class Product {
     constructor(
