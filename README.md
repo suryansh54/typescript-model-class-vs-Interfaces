@@ -53,3 +53,35 @@ export class Product {
     ){}
 }
 ```
+The real difference comes when we consider our compiled JavaScript output.
+
+The biggest difference between a class and an interface is that a class provides an implementation of something, not just its shape.
+
+```javascript
+class Response {
+    status: number // Some HTTP status code, such as 200
+}
+
+fetch('https://dummy.restapiexample.com/api/v1/employees')
+    .then((response: Response) => {
+        console.log(response.status)
+    })
+```
+
+##### After compiled
+```javascript
+var Response = (function () {
+    function Response() {
+    }
+    return Response;
+}());
+fetch('https://dummy.restapiexample.com/api/v1/employees')
+    .then(function (response) {
+    console.log(response.status);
+});
+```
+
+##### Reference
+https://www.typescriptlang.org/play
+https://jameshenry.blog/typescript-classes-vs-interfaces
+https://stackoverflow.com/questions/37652801/when-to-use-interface-and-model-in-typescript-angular2
